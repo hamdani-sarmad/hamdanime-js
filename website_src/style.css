@@ -28,6 +28,15 @@
     font-family: 'Space Grotesk', sans-serif;
     color: #E37383;
     -webkit-text-stroke: 1px black;
+
+}
+
+.page1 h1 .code{
+    color: #E37383;
+    font-family: 'Nanum Gothic Coding', cursive;
+    font-size: 5vw;
+    -webkit-text-stroke: 0;
+
 }
 
 .page1 h1 span{
@@ -45,6 +54,16 @@
     font-family: 'Pixelify Sans', cursive;
     color: #E37383;
     text-decoration: none;
+}
+
+.page1 p .title-text1{
+    font-family: 'Nanum Gothic Coding', cursive;
+    color: #E37383;
+    font-weight: 900;
+}
+.page1 p .title-text2{
+    color: #1e293b;
+    font-weight: 900;
 }
 
 .page1 button{
