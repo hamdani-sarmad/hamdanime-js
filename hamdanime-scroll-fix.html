@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Cursor Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        /* overflow-y: scroll;
+        overflow-x: hidden; */
+        margin-left: 10px;
+      }
+
+      /* Add this CSS to make the cursor div non-interactable */
+      .custom-cursor {
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>hamdanime</h1>
+    <!-- add text here to see the proper functioning while scrolling(eg. use lorem) -->
+    <div class="custom-cursor"></div>
+
+    <script>
+      function cursor(
+        bgColor = "black",
+        cursorWidth = 50,
+        delay = 100,
+        blendMode = "difference"
+      ) {
+        const cursorDiv = document.createElement("div");
+        cursorDiv.className = "custom-cursor";
+        cursorDiv.style.cssText = `position: fixed; background-color: ${bgColor}; height: ${cursorWidth}px; width: ${cursorWidth}px; border-radius: 50%; transition: ${delay}ms; mix-blend-mode: ${blendMode}; pointer-events: none;`;
+        document.body.appendChild(cursorDiv);
+
+        document.addEventListener("mousemove", updateCursor);
+
+        window.addEventListener("scroll", updateCursor);
+
+        function updateCursor(e) {
+          const cursorX = e.clientX;
+          const cursorY = e.clientY;
+
+          cursorDiv.style.left = cursorX + "px";
+          cursorDiv.style.top = cursorY + "px";
+        }
+      }
+
+      cursor("blue", 30, 50, "overlay");
+    </script>
+  </body>
+</html>
+
