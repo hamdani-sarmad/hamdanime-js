@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Cursor Example</title>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      margin-left: 10px;
+      
+    }
+ 
+  </style>
+</head>
+<body>
+  <h1>hamdanime</h1>
+
+  <script >
+    function cursor(
+      bgColor = "black",
+      cursorWidth = 50,
+      delay = 100,
+      blendMode = "difference"
+    ) {
+      const cursorDiv = document.createElement("div");
+      cursorDiv.style.cssText = `position: absolute; background-color: ${bgColor}; height: ${cursorWidth}px; width: ${cursorWidth}px; border-radius: 50%; transition: ${delay}ms; mix-blend-mode: ${blendMode};`;
+      document.body.appendChild(cursorDiv);
+
+      document.addEventListener("mousemove", (e) => {
+        cursorDiv.style.left = e.clientX + "px";
+        cursorDiv.style.top = e.clientY + "px";
+      });
+    }
+
+    
+    cursor("blue", 30, 50, "overlay");
+  </script>
+</body>
+</html>
